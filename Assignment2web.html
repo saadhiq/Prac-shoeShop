@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+   <html>
+    <head lang="en">
+       <meta charset="utf-8"> 
+       <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+       <style>
+	   
+   div.navbar{
+           position:fixed;
+           width: 100%;
+           border-radius: 0px;
+           padding-top: 1vh;
+           padding-bottom: 1vh;
+           z-index: 950;
+       }
+       
+       div.navbar ul{
+           display: inline;
+           list-style-type: none; 
+       }
+              
+       div.navbar h3{
+           display: inline;
+           color: white;
+           font-family: sans-serif;
+           font-size: 40px;
+           padding-left: 20px;
+       }
+       
+       .navbar li{           
+         display: inline;
+       } 
+       
+       .navbar a{
+           float:right;
+           color: aliceblue;
+           padding-left: 1vw;;
+           padding-right: 1vw;
+           font-size: 12px;
+       }
+       
+        .navbar a:hover{
+            opacity: 50%;
+            text-decoration: none;
+           }
+
+        .back section{               
+               min-height: 680px;
+               height: 100vh
+           }
+           
+           .back .container{
+               height: 100%;
+               width: 100%;
+               padding: 0;
+           }
+           .back .row{
+               height: 100%;
+               margin-left: auto;
+               margin-right: auto;
+           }
+
+            .front section{
+               position: absolute;
+               top: 0;
+               min-height: 680px; 
+               height: 100vh;
+               width: 100%;
+           }
+           
+           .front .container{
+               width: 100%;
+               height: 500px;
+               margin: 0 auto;
+               display: block;
+               position: absolute; 
+               top: 50%; left: 50%;
+               margin-right: -50%;
+               transform: translate(-50%, -50%);
+           }
+           
+           .front .row{
+               height: 500px; 
+               display: block;
+           }
+           
+           .front .col-md-6{
+               display: inline-block;
+               height: inherit;
+           }
+           
+           
+        
+           .front img{
+               object-fit:scale-down;
+               height:96%;
+               width: 96%;
+               margin-top:1%;
+               margin-bottom: 0;
+               transition:1s; 
+           }
+           
+           .front img:hover{
+               height: 100%;
+               width: 100%;
+               margin-top: 0;
+           }
+           
+           .front .card{
+               padding-top:3%;
+               height: 100%;
+               vertical-align: middle;
+           }
+                                                   
+           .topic-1{
+               display: block;
+               font-family: sans-serif;
+               font-size: 30px;
+               color: white
+           }
+           
+           .topic-main{
+               display: block;
+               font-family: sans-serif;
+               font-size: 55px;
+               color: white; 
+               margin-top: 30px
+           }
+           
+           #start_Shipping{
+               height: 55px; 
+               width:200px; 
+               margin-top: 5px;
+               background-color: #F1F1F1;
+               border-radius: 50px;
+               padding: 10px;
+               font-weight: 600;
+               text-align: center;
+               font-size: 20px;
+               border: 0px;
+               color: black;
+           }
+           
+           
+           .background{
+               position: relative;           
+
+           }
+           
+           .background .container-fluid{
+               height: 100vh;
+               min-height: 500px;
+           }
+           
+        
+           .front .col-sm-12{
+               margin-left: auto;
+               margin-right: auto;
+           }
+
+
+            .fa-star, .fa-star-half-o, .fa-star-o{
+               color: #FF523B ;
+               font-size: 200%;
+           }
+           
+           .best-sellers .card{
+               padding: 16px;
+               text-align: center;
+           }      
+          
+           .best-sellers .card:hover {
+               box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+               transform: translateY(-8px);
+           }         
+           
+           .best-sellers .name{
+               font-family: sans-serif;
+               font-size: 250%;
+               font-weight: bolder;
+               
+           }
+           
+           .best-sellers .type{
+               font-family: sans-serif;
+               font-size: 200%;
+               opacity: 50%;
+               line-height: 50%;
+           }
+           
+           .main-title{
+               display: block;
+               text-align: center;
+               padding-bottom: 4%
+           }
+
+        .size-chart section, .team section{
+               height: 100%; 
+               display: block;
+               margin-top: 10%
+           }
+           
+           .size-chart table{
+               table-layout: fixed;
+               margin-left: auto;
+               margin-right: auto;
+               width: inherit;
+           }
+           
+           
+           .size-chart tr:nth-child(even) 
+           {background-color: #F1F1F1;}
+           
+           
+           .size-chart tr:hover 
+           {background-color:#4E84C2;}
+           
+           .table-borderless > tbody > tr > td,
+           .table-borderless > tbody > tr > th,
+           .table-borderless > tfoot > tr > td,
+           .table-borderless > tfoot > tr > th,
+           .table-borderless > thead > tr > td,
+           .table-borderless > thead > tr > th {
+               border: none;
+               border-bottom: 1px solid black;
+               border-bottom-color: black;
+           }
+
+           .team .name{
+               font-weight: bolder;
+               font-size: 200%;
+               margin-top: 8%;
+           }
+           
+           .team .position{
+               font-weight: normal;
+               color: #365C9A;
+               line-height: 20%;
+               font-size: 150%;
+           }
+
+        input[type=text], input[type=email], textarea{
+               margin-bottom: 10%;
+               background-color: transparent;
+               border: none;
+               padding:10px;
+               border-bottom: 1px solid black;
+               width: 85%;
+               transition:0.2s; 
+               border-radius: 0px;
+           }
+           
+           input[type=text]:focus,input[type=email]:focus,textarea:focus {
+               border: none;
+               outline:none;
+               box-shadow: 0 0 5px rgb(35, 173, 278); 
+           }
+           
+           input[type=submit]{
+               background-color: #365C9A;
+               border-radius: 50px;
+               width: 200px;
+               height: 40px;
+               margin-bottom: 20%;
+               font-family: sans-serif;
+               color: #F1F1F1;
+               font-weight: bold;
+               border: none;
+           }
+
+       
+       @media only screen and (max-width:992px){
+           .col-sm-0{
+                display: none;
+           }
+              
+           div.navbar ul{
+               padding-top: 30px;
+               display: block;
+           }
+           
+           .navbar a{
+           float:right;
+           color: aliceblue;
+           padding-left: 1vw;
+           padding-right:1vw;
+           font-size: 12px;
+           }  
+           .front section{                   
+                   position: absolute;
+                   width: 100%;
+               }
+               
+               .front .container{
+                   height: 100%;
+                   width: 100%;
+                   margin-top: 150px;
+                   display: block;
+                   position: absolute; 
+                   top: 50%; left: 50%;
+                   margin-right: -50%;
+                   transform: translate(-50%, -50%);
+               }
+               
+               .front .columtop{
+                   height: 50%;
+                   display: block;
+               }
+               
+               .front .colum{
+                   height: 50%;                   
+                   width: 100%;
+                   display: block;
+               }
+               
+               .front .card{               
+                   margin-top:-1%;
+               }
+               
+               .card .topic-1{
+                   display: block;
+                   font-family: sans-serif;
+                   font-size: min(7vw,20px);
+                   color: white;
+                   height: 20%;
+                   text-align: center;                       
+               }         
+               
+               .card .topic-main{
+                   display: block;
+                   font-family: sans-serif;
+                   font-size: min(8vw,44px);
+                   line-height: 1.2;
+                   color: white; 
+                   margin-top: 0;
+                   text-align: center;
+                   height: 60%;
+               
+               }
+                              
+               #start_Shipping{
+                   margin-left: auto;
+                   margin-right: auto;
+                   height: 20%;
+                   width: min(50vw,200px);
+                   display: block;
+                   font-size:min(6vw,20px);
+                   
+               }  
+            .team .card{
+                   padding:5%;
+               }
+			   
+		
+           @media only screen and (max-width:992px){
+              
+           }
+        </style>
+        
+       <title>Sneakers store</title>
+    </head>
+    <body onload="imagechange()">
+      <div class="navbar" id='navbar'>
+          <h3><b>Sneakers store</b></h3>
+       <ul>
+           <li><a href="#contact">Contact Us</a></li>
+           <li><a href="#team">Our Team</a></li>
+           <li><a href="#size-chart">Size Chart</a></li>
+           <li><a href="#home">Home</a></li>        
+       </ul>
+      </div>
+       <a id="home"></a>
+        <div class="back">
+          <section>
+               <div class="container">
+                <div class="row">
+                  <div class="col-md-4 col-sm-0" style="background-color: #4FA15F; height: inherit" ></div>
+                  <div class="col-md-8 col-sm-12" style="background-color:#4E84C2; height: inherit"></div>       
+                </div>
+              </div>
+          </section>
+      </div>
+      
+        <div class="front">
+         <section>
+              <div class="container">
+               <div class="row">
+                 <div class="col-md-6 columtop">
+                   <img src="images/bestseller1.jpg" id="img-slide" class="img-responsive center-block align-middle" alt="image-slide">
+                 </div>
+                 
+                 <div class="col-md-6 colum" style="">
+                   <div class="card">     
+                        <div class="card-body">
+                          <div class="topic-1">
+                             <p><b>Sneaker Store</b> Sale!</p>
+                          </div>
+                          <div class="topic-main">
+                             <p><b>New Sports<br>collection already<br>on sale</b></p>
+                            </div>
+                            <div class="justify-content-center">
+                            <a href="#best-sellers" class="btn btn-primary" id="start_Shipping">Start Shopping</a>
+                            </div>
+                        </div>
+                   </div> 
+                 </div>       
+              </div>
+          </div>
+      </section>
+        </div>
+        <a id="best-sellers"></a>
+        <div class="best-sellers" >
+        <section style="height: 100%; display: block;;margin-top: 10%">
+            <div class="h1 main-title">BEST SELLERS</div>
+            
+            <div class="container" style="width: 90%";>
+                <div class="row" style="width: 100%">
+                    <div class="col-md-4 col-sm-12" >  
+                        <div class="card" style="transition: 0.3s;">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/bestseller1.jpg" alt="best-seller1" style="width: 100%">
+                        <div class="card-footer">
+                            <p class="name">BROWN GLASSES</p>
+                            <p class="type">Casual sneaker</p>
+                            <div class="star-rating">
+                                 <i class="fa fa-star"></i>
+								 <i class="fa fa-star"></i>
+								 <i class="fa fa-star"></i>
+								 <i class="fa fa-star"></i>
+								 <i class="fa fa-star"></i>                     
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">                        
+                       <div class="card">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/bestseller2.jpg" alt="best-seller2" style="width: 100%">
+                        <div class="card-footer">
+                            <p class="name">BROWN GLASSES</p>
+                            <p class="type">Casual sneaker</p>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                     </div>
+                    <div class="col-md-4 col-sm-12">                        
+                       <div class="card">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/bestseller3.jpg" alt="best-seller3" style="width: 100%">
+                        <div class="card-footer">
+                            <p class="name">BROWN GLASSES</p>
+                            <p class="type">Casual sneaker</p>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+							</div>
+                        </div>
+                    </div>
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+        </div> 
+        <a id="size-chart"></a>
+        <div class="size-chart" >
+        <section>
+            <div class="h1 main-title">SIZE CHART</div>
+            <div class="container" style="width: 90%";>
+               <div class="container" style="width: 100%;">
+            <table class="table  table-borderless">
+               <tbody>
+                <tr>
+                    <th scope="col">cm</th>
+                    <th scope="col">23.5</th>
+                    <th scope="col">24.4</th>
+                    <th scope="col">25.4</th>
+                    <th scope="col">25</th>
+                    <th scope="col">27</th>
+                    <th scope="col">27.9</th>
+                    <th scope="col">28.6</th>
+                    <th scope="col">29.4</th>
+                </tr>              
+                    <tr>
+                        <th scope="row">EU</th>
+                        <td>39</td>
+                        <td>40</td>
+                        <td>41</td>
+                        <td>42</td>
+                        <td>43</td>
+                        <td>44</td>
+                        <td>45</td>
+                        <td>46</td>
+                   </tr>
+                   <tr>
+                        <th scope="row">UK</th>
+                        <td>5.5</td>
+                        <td>5.6</td>
+                        <td>7.5</td>
+                        <td>8.5</td>
+                        <td>9.5</td>
+                        <td>10.5</td>
+                        <td>11.5</td>
+                        <td>12.5</td>
+                   </tr>
+                   <tr>
+                        <th scope="row">US</th>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                   </tr>
+                </tbody>
+            </table>
+            </div>  
+            </div>
+        </section>
+        </div>      
+        <a id="team"></a>
+        <div class="team" >
+        <section>
+            <div class="h1 main-title">STILL IN DOUBT? COME AND OUR TEAM WILL HELP YOU</div>
+            <div class="container" style="width: 100%;";>
+            <div class="row">
+                    <div class="col-md-3 col-sm-12" >  
+                        <div class="card">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/user1.JPG" alt="user1" style="width: 100%">
+                        <div class="card-footer">
+                            <p class="name">Amanda Fernandz</p>
+                            <p class="position">Sales Manager</p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                      <div class="col-md-3 col-sm-12" >  
+                        <div class="card">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/user2.JPG" alt="user2" style="width: 100%">
+                        <div class="card-footer">
+                            <p class="name">Amanda Fernandz</p>
+                            <p class="position">Sales Manager</p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                      <div class="col-md-3 col-sm-12" >  
+                        <div class="card">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/user3.JPG" alt="user3" style="width: 100%;">
+                        <div class="card-footer">
+                            <p class="name">Amanda Fernandz</p>
+                            <p class="position">Sales Manager</p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                      <div class="col-md-3 col-sm-12" >  
+                        <div class="card">
+                        <div class="card-body">
+                        <img class="card-img-top" src="images/user4.JPG" alt="user4" style="width: 100%">
+                        <div class="card-footer">
+                            <p class="name">Amanda Fernandz</p>
+                            <p class="position">Sales Manager</p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            
+            </div>
+        </section>
+        </div>
+        <a id="contact"></a>
+        <div class="contact">
+        <section style="height: 100%;">
+            <div class="container" style="width: 97%;margin-top: 10%;">
+            <div class="row">
+                    <div class="col-md-6 col-sm-12">  
+                        <div class="card">
+                        <p>GET IN TOUCH WITH US AND WE CAN HELP YOU</p>
+                        <h1 class="H1">Come to us or ask question right now</h1>
+                        <form action="mailto:someone@gamil.com?subject=Web inquiry" enctype="text/plain" method="post">
+                        <table style="width: 100%;height: inherit;table-layout: fixed;margin-top: 50px;">
+                            <tr>
+                                <td>
+                                     <input type="text" id="fname" name="frist name" placeholder="Your Name*" required style="">
+                                </td>
+                                <td>
+                                    <input type="text" id="lname" name="Last Name" placeholder="Your Last Name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="email" id="email" name="email address" placeholder="Email*" required>
+                                </td>
+                                <td>
+                                    <input type="text" id="mobileNum" name="Contact Number" placeholder="Phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <textarea id="message" name="Message" style="width: 100" placeholder="Message"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td><input type="submit" value="Send Message"></td>
+                            </tr>
+                            
+                        </table>
+                        </form>
+                    </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12" >  
+                        <a href="https://www.google.lk/maps/"><img class="card-img-top" src="images/map.jpg" alt="Map" style="width: 100%"></a>
+                </div>
+            </div>
+            </div>
+        </section>
+        </div>
+        <div class= "footer">
+            <section style="height: 70px;background-color:#365C9A;margin: auto; ">
+                <div class="container" style="height: 100%;padding-top:20px">
+                    <p style="text-align: center;color:#F1F1F1;font-size: 20px;">Copyright &copy; 2020 - Sneakers store - All right reserved.</p>
+                </div>
+            </section>
+        </div>
+   </body>       
+   <script>
+   var img = document.getElementById("img-slide");
+var imgurl=["images/bestseller1.jpg","images/bestseller2.jpg","images/bestseller3.jpg"];   
+var i=0;
+var navbr =document.getElementById('navbar');
+       
+function imgchanger(){
+    if(i==3){
+        i=0;
+    }
+    img.src=imgurl[i];
+    i++;
+}  
+       
+function imagechange(){
+    setInterval(imgchanger,3000);
+} 
+
+
+window.onscroll=function(){
+    if (window.pageYOffset>60) {
+            navbr.style.background="#365C9A";
+            }
+    else{
+            navbr.style.background="transparent";
+            }
+}
+</script>
+</html>
+  
